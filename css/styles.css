@@ -25,6 +25,7 @@ button {
 }
 a {
     color: currentColor;
+    cursor: pointer;
 }
 /*---------------------------------BODY-------------------------------------*/
 body {
@@ -38,30 +39,23 @@ body {
     margin: 0 auto;
 }
 /*----------------------------------HEADER-----------------------------------*/
-.envelope::before {
-    display: inline-flex;
-    content: "";
-    width: 16px;
-    height: 12px;
-    margin-right: 10px;
-    background-image: url();
+.envelope {
+    display: flex;
+    align-items: center;
 }
 .envelope-svg {
+    display: flex;
     margin-right: var(--typical-margin);
     fill: currentColor;
+}
+.fhone {
+    display: flex;
+    align-items: center;
 }
 .fhone-svg {
+    display: flex;
     margin-right: var(--typical-margin);
     fill: currentColor;
-}
-.telephone::before {
-    display: inline-flex;
-    content: "";
-    width: 10px;
-    height: 16px;
-    margin-right: 10px;
-    background-image: url(/images/icon.svg/telephone.png);
-
 }
 .header {
     border-bottom-width: 1600px;
@@ -176,12 +170,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-image:  linear-gradient( rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-    url(/images/d/photo17.jpg);
+    url(../images/d/photo-17.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-/* ------------------------------------TITLE----------------------------------------- */
+/* ------------------------------------ ОСОБЕННОСТИ----------------------------------------- */
 .expert {
     display: flex;
     justify-self: center;
@@ -189,14 +183,16 @@ body {
 .title {
     padding-top: 94px;
 }
-.title-list + .title-list {
-    margin-left: 30px;
+.title-expert {
+    width: 270px;
 }
+.title-expert + .title-expert {
+    margin-left: 30px;
+} 
 .title-expert::before {
     display: block;
     content: "";
     margin-bottom: 30px;
-    width: 270px;
     height: 120px;
 
     border-radius: 4px;
@@ -216,9 +212,6 @@ body {
 .title-expert:nth-child(4)::before {
     background-image: url(../images/icon.svg/astronaut.svg);
 }   
-.title-item {
-    margin-right: 30px;
-}
 .title-list {
     margin-bottom: var(--typical-margin);
 
@@ -230,16 +223,14 @@ body {
     color: #212121;
 }
 .title-item {
-    width: 270px; 
-    min-height: 75px;
-    
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: #757575;
 }
-/* ----------------------------------------SUBJECT-------------------------------- */
+
+/* --------------------------------------ЧЕМ МЫ ЗАНИМАЕМСЯ-------------------------------- */
 .list-item {
     display: flex;
 }
@@ -256,7 +247,7 @@ body {
 .list-desk:not(:last-child) {
     margin-right: 30px;
 }
-/* -------------------------------------HEADING---------------------------------- */
+/* -------------------------------------НАША КОМАНДА---------------------------------- */
 .section-heading {
     background-color: #F5F4FA;
 }
@@ -308,7 +299,7 @@ body {
     letter-spacing: 0.03em;
     color: #757575;
 }
-/* ------------------------------ICONS--OUR-TEAM------------------------------- */
+/* ------------------------------ICONS--НАША КОМАНДА------------------------------- */
 .actions {
     display: flex;
     justify-content: center;
@@ -417,11 +408,11 @@ body {
     margin-right: 8px;
 }
 .button-service:hover,
-.button-service:focus { 
-    background: #188CE8;
-    color:#FFFFFF;
+.button-service:focus {
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-}
+    
+    
+} 
 .container-button {
     display: flex;
     justify-content: center;
@@ -440,6 +431,8 @@ body {
     line-height: 1.88;
     text-align: center;
     letter-spacing: 0.06em;
+
+    background: #188CE8; 
     color: #FFFFFF;
 }
 .all-btn {
@@ -527,7 +520,7 @@ body {
     letter-spacing: 0.03em;
     color: var(--heading-color);
 }
-/* -------------------------------REGULAR CUSTOMERS---------------------------------- */
+/* -------------------------------ПОСТОЯННЫЕ КЛИЕНТЫ---------------------------------- */
 .aside-list {
     display: flex;
     justify-content: center;
@@ -565,6 +558,15 @@ body {
     padding-top: 60px;
     padding-bottom: 60px;
 }
+.holder {
+    display: flex;
+}
+.box-address {
+    margin-right: 70px;
+}
+.box-socials {
+    padding-top: 12px;
+}
 .footer-logo {
     margin-bottom: 20px;
 
@@ -578,9 +580,6 @@ body {
 }
 .footer-logo-accent {
     color: #FFFFFF;
-}
-.webstudio {
-    margin-bottom: 20px;
 }
 .footer-address {
     margin-bottom: 9px;
@@ -612,21 +611,29 @@ body {
     justify-content: start;
 }
 .socials-title {
+    display: flex;
     margin-bottom: 20px;
-
-    font-family: 'Roboto';
     font-weight: 700;
-    font-size: 16.41px;
+    font-size: 14px;
     line-height: 16px;
     letter-spacing: 0.03em;
+    text-transform: uppercase;
     color:  #FFFFFF;
-
-
+}
+.socials-link:hover,
+.socials-link:focus {
+    background-color: #2196F3;
+    /* fill: currentColor; */
+    /* color: #2196F3; */
+}
+.socials-svg {
+    fill: #FFFFFF;
+    /* fill: currentColor; */
 }
 .socials-list {
     width: 44px;
     height: 44px;
-}
+} 
 .socials-list:not(:last-child) {
     margin-right: var(--typical-margin);
 }
@@ -639,20 +646,4 @@ body {
     height: 100%;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.1);
-}
-.socials-svg {
-    fill: var(--btn-focus-color) ;
-}
-.socials-link:hover,
-.socials-link:focus {
-    background-color: var(--btn-hover-color);
-}
-.holder {
-    display: flex;
-}
-.box-address {
-    margin-right: 70px;
-}
-.box-socials {
-    padding-top: 12px;
 }
